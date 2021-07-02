@@ -31,9 +31,16 @@ Vue.createApp({
 const vm = Vue.createApp({
   data() {
     return {
-      firstName: 'John'
+      firstName: 'John',
+      lastName: 'Doe',
     }
-  }
+  },
+
+  methods: {
+    fullName() {
+      return `${this.firstName} ${this.lastName}`;
+    }
+  },
 }).mount('#vm');
 
 setTimeout(() => {
