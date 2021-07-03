@@ -51,7 +51,7 @@
           type="text"
           id="last"
           :value="lastName"
-          @input="updateLastName"
+          @input.prevent="updateLastName"
         >
       </div>
 
@@ -61,7 +61,7 @@
           type="text"
           id="last1"
           :value="lastName"
-          @input="updateLastNameWithMessage($event, 'message')"
+          @input.prevent="updateLastNameWithMessage($event, 'message')"
         >
       </div>
 
