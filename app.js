@@ -29,6 +29,8 @@ Vue.createApp({
 }).mount('#twin1');
 
 const vm = Vue.createApp({
+  // reactivity is when any changes to the data is
+  // immediately reflected on the page
   data() {
     return {
       firstName: 'John',
