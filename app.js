@@ -35,6 +35,7 @@ const vm = Vue.createApp({
     return {
       firstName: 'John',
       lastName: 'Doe',
+      url: 'https://duckduckgo.com/',
     }
   },
 
