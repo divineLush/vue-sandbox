@@ -1,6 +1,11 @@
 <html>
   <head>
     <title>Vue Sandbox</title>
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <div class="app">
@@ -23,7 +28,7 @@
       <p>{{ a }}</p>
     </div>
 
-    <div id="vm">
+    <div id="vm" v-cloak>
       <p>{{ fullName() }}</p>
     </div>
 
