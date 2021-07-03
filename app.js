@@ -37,13 +37,22 @@ const vm = Vue.createApp({
       lastName: 'Doe',
       url: 'https://duckduckgo.com/',
       rawURL: '<a href="https://duckduckgo.com/" target="_blank">DUCK</a>',
+      age: 20,
     }
   },
 
   methods: {
     fullName() {
       return `${this.firstName} ${this.lastName}`;
-    }
+    },
+    increment() {
+      this.age++;
+    },
+    // when vue calls function, it'll automatically pass the event object
+    updateLastName(event) {
+      console.log(event);
+      this.lastName = event.target.value;
+    },
   },
 }).mount('#vm');
 
