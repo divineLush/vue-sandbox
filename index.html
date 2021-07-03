@@ -5,6 +5,15 @@
       [v-cloak] {
         display: none;
       }
+
+      body {
+        padding: 2rem;
+      }
+
+      a {
+        display: inline-block;
+        padding: 1rem;
+      }
     </style>
   </head>
   <body>
@@ -37,8 +46,11 @@
       <label for="last">Last Name</label>
       <input type="text" id="last" v-model="lastName">
 
-      <a v-bind:href="url">DUCK</a>
-      <a :href="url">DUCK</a>
+      <div>
+        <a v-bind:href="url">DUCK</a>
+        <a :href="url">DUCK</a>
+        <p v-html="rawURL"></p>
+      </div>
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
