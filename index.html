@@ -42,7 +42,7 @@
 
       <div>
         <label for="first">First Name</label>
-        <input type="text" id="first" v-model="firstName">
+        <input type="text" id="first" v-model.lazy.trim="firstName">
       </div>
 
       <div>
@@ -81,6 +81,16 @@
         <a :href="url">DUCK</a>
         <p v-html="rawURL"></p>
         <p>{{ age }}</p>
+        <div>
+          <label for="age">Age</label>
+          <!-- by default, the browser will convert the value to string -->
+          <!-- v-model modifier will convert the value back to number -->
+          <input
+            type="number"
+            id="age"
+            v-model.number="age"
+          >
+        </div>
         <button v-on:click="increment">increment</button>
         <!-- system modifier key -->
         <button @click.ctrl="age--">hold ctrl and click</button>
