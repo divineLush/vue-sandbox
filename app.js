@@ -53,6 +53,10 @@ const vm = Vue.createApp({
       console.log(event);
       this.lastName = event.target.value;
     },
+    updateLastNameWithMessage(event, message) {
+      console.log(message);
+      this.updateLastName(event);
+    }
   },
 }).mount('#vm');
 
