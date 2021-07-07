@@ -8,6 +8,7 @@
 
 <body>
   <div id="app">
+    <!-- v-if is cheap on load, expensive on toggle -->
     <p v-if="mode == 1">v-if content</p>
     <template v-else-if="mode == 2">
       <p>v-else-if</p>
@@ -19,6 +20,8 @@
       <option value="2">v-else-if</option>
       <option value="3">v-else</option>
     </select>
+    <!-- v-show is expensive on load, cheap on toggle -->
+    <p v-show="mode == 1">v-show content</p>
   </div>
 
   <script src="https://unpkg.com/vue@next"></script>
