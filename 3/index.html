@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <title>VueJS Course</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(bird, index) in birds" :class="bird">
+        {{ `${bird} - ${index}` }}
+      </li>
+    </ul>
+    <ul>
+      <li v-for="person in people">
+        {{ `${person.name} - ${person.age}` }}
+      </li>
+    </ul>
+    <ul>
+      <li v-for="person in people">
+        <!-- looping through object -->
+        <p v-for="(value, key, index) in person">
+          {{ `${key}: ${value} - ${index}` }}
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
