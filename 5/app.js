@@ -6,10 +6,59 @@ let vm = Vue.createApp({
     return {
       message: "Hello world!"
     }
-  }
+  },
+
+  beforeCreate() {
+    // $el is the element Vue was mouned to
+    // undefined null
+    console.log('beforeCreate: ', this.message, this.$el);
+  },
+
+  created() {
+    // Hello world! null
+    console.log('created: ', this.message, this.$el);
+  },
+
+  beforeMount() {
+    // Hello world! null
+    console.log('beforeMount: ', this.message, this.$el);
+  },
+
+  mounted() {
+    // Hello world! "Hello world!"
+    console.log('mounted: ', this.message, this.$el);
+
+    setTimeout(() => {
+      this.message = 'updated';
+    }, 2000);
+  },
+
+  beforeUpdate() {
+    // updated "updated"
+    console.log('beforeUpdate: ', this.message, this.$el);
+  },
+
+  updated() {
+    // updated "updated"
+    console.log('updated: ', this.message, this.$el);
+  },
+
+  beforeUnmount() {
+    // updated "updated"
+    console.log('beforeUnmount: ', this.message, this.$el);
+  },
+
+  unmounted() {
+    // updated "updated"
+    console.log('unmounted: ', this.message, this.$el);
+  },
 });
 
 vm.mount('#app');
+
+setTimeout(() => {
+  vm.unmount();
+}, 4000);
 
 // setTimeout(() => {
 //   vm.mount('#app');
@@ -30,3 +79,7 @@ vm.mount('#app');
 // 12. Apply changes to the template
 // 13. updated() - runs once the template is patched with the updated data
 // 14. Restart lifecycle
+// 15. vm.unmount()
+// 16. beforeUnmount() - data and methods can still be accessed
+// 17. Vue instance is destroyed
+// 18. unmounted()
